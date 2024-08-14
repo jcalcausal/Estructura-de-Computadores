@@ -1,0 +1,33 @@
+
+
+---Dinero III by Mark D. Hill.
+---Version 3.3, Released May 1989.
+---DOS Version by Maziar Khosravipour, Released May 1992
+
+---Execution begins.
+
+CMDLINE: C:\TEMP\DINERO.EXE -b32 -i8192 -d8192 -a1
+CACHE (bytes): blocksize=32, sub-blocksize=0, Usize=0, Dsize=8192, Isize=8192.
+POLICIES: assoc=1-way, replacement=l, fetch=d(1,0), write=c, allocate=w.
+CTRL: debug=0, output=0, skipcount=0, maxcount=10000000, Q=0.
+
+---Simulation begins.
+---Simulation complete.
+
+ Metrics		Access Type:
+ (totals,fraction)	Total	Instrn	 Data	 Read	Write	 Misc
+ -----------------	------	------	------	------	------	------
+ Demand Fetches		  1000	   470	   530	   234	   296	     0
+			1.0000	0.4700	0.5300	0.2340	0.2960	0.0000
+
+ Demand Misses		    59	    26	    33	    16	    17	     0
+			0.0590	0.0553	0.0623	0.0684	0.0574	0.0000
+
+ Words From Memory	   472
+ ( / Demand Fetches)	0.4720
+ Words Copied-Back	   136
+ ( / Demand Writes)	0.4595
+ Total Traffic (words)	   608
+ ( / Demand Fetches)	0.6080
+
+---Execution complete.

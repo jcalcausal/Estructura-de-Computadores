@@ -1,0 +1,31 @@
+.include "inter.inc"
+
+.text
+	ldr r0, =GPBASE
+/* guia bits xx999888777666555444333222111000 */
+	mov r1, #0b00001000000000000000000000000000
+	str r1, [r0, #GPFSEL0]
+/*  guia bits 10987654321098765432109876543210 */
+	mov r1, #0b00000000000000000000001000000000
+	str r1, [r0, #GPFSET0]
+/* guia bits xx999888777666555444333222111000 */
+	mov r1, #0b00000000000000000000000000000001
+	str r1,[r0, #GPFSEL1]
+/* guia bits 10987654321098765432109876543210 */
+	mov r1, #0b00000000000000000000010000000000
+	str r1, [r0, #GPSET0]
+	mov r2, #0b00000000000000000000000000000100
+	mov r4, #0b00000000000000000000000000001000
+bucle:
+	ldr r3, [r0, #GPLEV0]
+	ldr r5, [r0, #GPLEV0]
+	tst r3, r2
+	bne bucle1 */si z=0, el resultado de tst NO ES 0 entonces el botón 2 no ha sido pulsado y miramos el otro*/
+	mov r6, #0b00000000000000000000001000000000
+	str r6, [r0, #GPCLR0]
+bucle1:
+	tst r5, r4
+	bne bucle
+	mov r7, #0b00000000000000000000010000000000
+	ldr r7, [r0, #GPCLR0]
+	b bucle
